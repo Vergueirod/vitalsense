@@ -10,46 +10,48 @@
 <body>
 
     <section class="main-container"> 
-        <div class="banner-container">
-            
-            <img src="{% static 'img/logo.png' %}" alt="" class="img-config">
-            <h1 class="vs-banner">Vital Sense</h1>
 
-        </div>
-        <div class="register-container"> 
-            <div class="header">
-                <h1>Create account</h1>
-            </div>
+            <div class="banner-container">
+                
+                <img src="{% static 'img/logo.png' %}" alt="" class="img-config">
+                <h1 class="vs-banner">Vital Sense</h1>
 
-            <div class="forms-control">
-                <label for="" class="label-default">First Name:</label>
-                <input type="text" class="input-default" name="first-name">
             </div>
-            <div class="forms-control">
-                <label for="" class="label-default" >Last Name:</label>
-                <input type="text" class="input-default" name="last-name">
-            </div>
-            <div class="forms-control">
-                <label for="" class="label-default">Username:</label>
-                <input type="text" class="input-default" name="username">
-            </div>
-            <div class="forms-control">
-                <label for="" class="label-default">E-mail:</label>
-                <input type="email" class="input-default" name="e-mail">
-            </div>
-            <div class="forms-control">
-                <label for="" class="label-default">Password:</label>
-                <input type="password" class="input-default" name="password">
-            </div>
-            <div class="forms-control">
-                <label for="" class="label-default">Confirm Password:</label>
-                <input type="password" class="input-default" name="confirm-password"> 
-            </div>
-            <div class="forms-control">
-                <button type="submit" class="btn-submit">Create account</button>
-            </div>
+            <form action="{% url 'register' %}" method="post" class="register-container" > {% csrf_token %}
+                
+                    <div class="header">
+                        <h1>Create account</h1>
+                    </div>
 
-        </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">First Name:</label>
+                        <input type="text" class="input-default" name="first-name">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default" >Last Name:</label>
+                        <input type="text" class="input-default" name="last-name">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">Username:</label>
+                        <input type="text" class="input-default" name="username">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">E-mail:</label>
+                        <input type="email" class="input-default" name="e-mail">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">Password:</label>
+                        <input type="password" class="input-default" name="password">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">Confirm Password:</label>
+                        <input type="password" class="input-default" name="confirm-password"> 
+                    </div>
+                    <div class="forms-control">
+                        <button type="submit" class="btn-submit">Create account</button>
+                </form>
+                </div>
+        
     </section>
 
 </body>

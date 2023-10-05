@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+
+    <section class="main-container"> 
+
+            <div class="banner-container">
+                
+                <img src="{% static 'img/logo.png' %}" alt="" class="img-config">
+                <h1 class="vs-banner">Vital Sense</h1>
+
+            </div>
+            <form action="{% url 'login' %}" method="post" class="register-container" > {% csrf_token %}
+                
+                    <div class="header">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">Username:</label>
+                        <input type="text" class="input-default" name="username">
+                    </div>
+                    <div class="forms-control">
+                        <label for="" class="label-default">Password:</label>
+                        <input type="password" class="input-default" name="password">
+                    </div>
+                    <div class="forms-control">
+                        <button type="submit" class="btn-submit">Login</button>
+                </form>
+                </div>
+        
+    </section>
+
+</body>
+</html>

@@ -12,4 +12,5 @@
 <img width="1440" alt="Screenshot 2023-10-05 at 20 22 47" src="https://github.com/Vergueirod/vitalsense/assets/98171411/709a56ad-142e-41b1-9d1b-ef05ece8c4f8">
 
 # Login
-<img width="1440" alt="Screenshot 2023-10-05 at 20 22 47" src="https://github.com/Vergueirod/vitalsense/assets/98171411/4a49aa8e-b2e7-4d35-9a62-59c43f286490">
+<img width="1440" alt="Screenshot 2023-10-05 at 20 23 07" src="https://github.com/Vergueirod/vitalsense/assets/98171411/1f8d61d9-7fe7-4663-90f1-ad7956a00153">
+

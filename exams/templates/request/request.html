@@ -15,7 +15,7 @@
         <div class="container-left">
             <h1 class="distance-control-h1"> Request Exams </h1>
             <p> Select the exams to take </p>
-            <form action="" method="post">
+            <form action="{% url 'request_exams' %}" method="post">{% csrf_token %}
    
                 <select class="select-control" multiple name="exams">
                     {% for exam in exams_type %}
@@ -29,20 +29,38 @@
         </div>
         <div class="container-right">
             <div class="container-card">
+                <h1 class="distance-control-h1"> Preview </h1>
+                <br>
+                {% for exam in request_exams %}
                 <div style="font-size: 20px; font-weight: bold" class="space-control">
-                    <label class="label-control"><img src="{% static '/img/check.png' %}"> Exame 1 </label>    
-                    <span class="previa-preco"> R$ 30 </span>     
+                    <label class="label-control">
+                         
+                        {% if exam.disponivel == True %}
+                        <img src="{% static '/img/check.png' %}"> 
+
+                        {% else %}
+                        <img src="{% static '/img/exit.png' %}"> 
+
+                        {% endif %}
+                        
+                        {{exam.nome}} </label>    
+                    <span class="previa-preco"> R$ {{exam.preco}} </span>     
                 </div>
+                {% endfor %}
+
                 <div class="bar"></div>
                 <div class="space-control">
-                    <label>Total: </label><label class="previa-preco">R$ 30</label>
+                    <label>Total: </label><label class="previa-preco">R$ {{preco_total}}</label>
                 </div>
                 <br>
 
                 <h5>Data: 08 de Setembro</h5>
                 <br>
 
-                <form action="" method="POST">
+                <form action="{% url 'close_orders' %}" method="POST">{% csrf_token %}
+                    {% for exams in request_exams%} <!-- Forma para coletar os dados do exam escolhido, para salvar no db -->
+                        <input type="hidden" value="{{exams.id}}" name="exams">
+                    {% endfor %}
                     <button class="btn-secundario">Close order</button>
                 </form>
 

@@ -57,10 +57,9 @@ def authLogin(request):
         if user:
 
             login(request, user)
-            return redirect('/')
+            return redirect('/exams/request_exams')
         
         else:
 
             return redirect('/auth/login')
 
-        #return HttpResponse('logado')
